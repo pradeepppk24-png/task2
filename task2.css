@@ -1,0 +1,31 @@
+.teams,
+.teams ul {
+    list-style: none;
+}
+
+.teams {
+    counter-reset: team;
+}
+
+.teams > li {
+    counter-increment: team;
+}
+
+.teams > li::before {
+    content: counter(team) ". ";
+    font-weight: bold;
+}
+
+/* Reset player counter for each team */
+.teams > ul {
+    counter-reset: player;
+}
+
+/* Number each player */
+.teams > ul > li {
+    counter-increment: player;
+}
+
+.teams > ul > li::before {
+    content: counter(team) "." counter(player) " ";
+}
